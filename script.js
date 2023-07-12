@@ -21,8 +21,8 @@ for (let i = 1; i <= userInput; i++) {
 // creating hover effect
 const boxArr = document.querySelectorAll('.box')
 
-boxArr.forEach(item => item.addEventListener('mouseover', handleClick))
+boxArr.forEach(item => item.addEventListener('mouseover', handleHover))
 
-function handleClick(e) {
+function handleHover(e) {
   e.target.classList.add('color-lightBlue')
 }
