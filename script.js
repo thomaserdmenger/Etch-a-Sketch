@@ -31,7 +31,7 @@ function createGrid(userInput) {
 
 createGrid(userInput)
 
-// creating button for user input to select the number of boxes
+// creating input section for user input to select the number of boxes
 const inputContainer = document.createElement('div')
 const form = document.createElement('form')
 
@@ -76,3 +76,11 @@ function handleClick() {
 
   container.style.maxWidth = `${+input.value * boxDimensions + +input.value + 1}px`
 }
+
+// creating explanation for grid for usability
+
+const explanation = document.createElement('p')
+explanation.textContent = 'Hover over the grid to color the boxes'
+explanation.classList.add('explanation')
+
+inputContainer.insertAdjacentElement('afterend', explanation)
