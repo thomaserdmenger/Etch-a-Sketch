@@ -1,28 +1,72 @@
 // creating the grid
 const container = document.querySelector('.container') // getting the container
-const userInput = 20 // number of horizontal and vertical boxes
-const gaps = userInput + 1 // box's borders: n boxes  = n borders + 1
+let userInput = 20 // number of horizontal and vertical boxes
+let gaps = userInput + 1 // box's borders: n boxes  = n borders + 1
 const boxDimensions = 25 // box's width and height in px
 
-for (let i = 1; i <= userInput; i++) {
-  for (let j = 1; j <= userInput; j++) {
-    // Creating the boxes with the proper dimensions
-    const box = document.createElement('div')
-    box.classList.add('box')
-    box.style.minWidth = `${boxDimensions}px`
-    box.style.minHeight = `${boxDimensions}px`
+function createGrid(userInput) {
+  for (let i = 1; i <= userInput; i++) {
+    for (let j = 1; j <= userInput; j++) {
+      // Creating the boxes with the proper dimensions
+      const box = document.createElement('div')
+      box.classList.add('box')
+      box.style.minWidth = `${boxDimensions}px`
+      box.style.minHeight = `${boxDimensions}px`
 
-    // appending the boxes as childs to the container and define container width
-    container.appendChild(box)
-    container.style.maxWidth = `${userInput * boxDimensions + gaps}px`
+      // appending the boxes as childs to the container and define container width
+      container.appendChild(box)
+      container.style.maxWidth = `${userInput * boxDimensions + gaps}px`
+    }
+  }
+
+  // creating hover effect with color lightblue
+  const boxArr = document.querySelectorAll('.box')
+
+  boxArr.forEach(item => item.addEventListener('mouseover', handleHover))
+  console.log(boxArr)
+
+  function handleHover(e) {
+    e.target.classList.add('color-lightBlue')
   }
 }
 
-// creating hover effect
-const boxArr = document.querySelectorAll('.box')
+createGrid(userInput)
 
-boxArr.forEach(item => item.addEventListener('mouseover', handleHover))
+// creating button for user input to select the number of boxes
+const inputContainer = document.createElement('div')
+const form = document.createElement('form')
 
-function handleHover(e) {
-  e.target.classList.add('color-lightBlue')
+const label = document.createElement('label')
+label.textContent = 'Define number of boxes'
+label.setAttribute('for', 'input')
+
+const input = document.createElement('input')
+input.setAttribute('type', 'text')
+input.setAttribute('id', 'input')
+input.setAttribute('name', 'input')
+
+const inputButton = document.createElement('button')
+inputButton.textContent = 'Create new grid'
+
+container.insertAdjacentElement('beforebegin', inputContainer)
+inputContainer.classList.add('input-container')
+inputContainer.appendChild(form)
+inputContainer.appendChild(label)
+inputContainer.appendChild(input)
+inputContainer.appendChild(inputButton)
+
+inputButton.addEventListener('click', handleClick)
+
+function handleClick() {
+  const children = document.querySelectorAll('.box')
+  const container = document.querySelector('.container')
+
+  children.forEach(item => {
+    container.removeChild(item)
+    item.classList.remove('box')
+  })
+
+  createGrid(input.value)
+
+  container.style.maxWidth = `${+input.value * boxDimensions + +input.value + 1}px`
 }
