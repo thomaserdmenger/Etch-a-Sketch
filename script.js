@@ -37,13 +37,15 @@ const inputContainer = document.createElement('div')
 const form = document.createElement('form')
 
 const label = document.createElement('label')
-label.textContent = 'Define number of boxes'
+label.textContent = 'Create your own grid. Choose a number between 1 and 60'
 label.setAttribute('for', 'input')
 
 const input = document.createElement('input')
-input.setAttribute('type', 'text')
+input.setAttribute('type', 'number')
 input.setAttribute('id', 'input')
 input.setAttribute('name', 'input')
+input.setAttribute('min', '1')
+input.setAttribute('max', '60')
 
 const inputButton = document.createElement('button')
 inputButton.textContent = 'Create new grid'
