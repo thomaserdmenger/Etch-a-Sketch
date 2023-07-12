@@ -48,7 +48,7 @@ input.setAttribute('id', 'input')
 input.setAttribute('name', 'input')
 input.setAttribute('min', '1')
 input.setAttribute('max', '40')
-input.setAttribute('placeholder', '20')
+input.defaultValue = '10'
 
 const inputButton = document.createElement('button')
 inputButton.textContent = 'Create new grid'
@@ -84,3 +84,15 @@ explanation.textContent = 'Hover over the grid to color the boxes'
 explanation.classList.add('explanation')
 
 inputContainer.insertAdjacentElement('afterend', explanation)
+
+// creating reset button to reset the page
+
+const resetButton = document.createElement('button')
+resetButton.textContent = 'Refresh page'
+inputWrapper.appendChild(resetButton)
+
+resetButton.addEventListener('click', handleReset)
+
+function handleReset() {
+  location.reload()
+}
