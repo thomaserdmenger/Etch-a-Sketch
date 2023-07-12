@@ -1,11 +1,8 @@
-// creating the grid ------------------------------------
-const container = document.querySelector('.container')
-
-// defining the amount of horizontal and vertical boxes
-const userInput = 5
-
-// defining the box dimensions
-const boxDimensions = 100
+// creating the grid
+const container = document.querySelector('.container') // getting the container
+const userInput = 20 // number of horizontal and vertical boxes
+const gaps = userInput + 1 // box's borders: n boxes  = n borders + 1
+const boxDimensions = 25 // box's width and height in px
 
 for (let i = 1; i <= userInput; i++) {
   for (let j = 1; j <= userInput; j++) {
@@ -17,6 +14,6 @@ for (let i = 1; i <= userInput; i++) {
 
     // appending the boxes as childs to the container and define container width
     container.appendChild(box)
-    container.style.maxWidth = `${userInput * boxDimensions}px`
+    container.style.maxWidth = `${userInput * boxDimensions + gaps}px`
   }
 }
