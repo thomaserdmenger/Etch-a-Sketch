@@ -24,3 +24,7 @@ body {
 .box {
   background-color: hsla(0, 0%, 100%, 1);
 }
+
+.color-lightBlue {
+  background-color: lightblue;
+}

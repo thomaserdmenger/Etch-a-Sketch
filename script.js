@@ -17,3 +17,12 @@ for (let i = 1; i <= userInput; i++) {
     container.style.maxWidth = `${userInput * boxDimensions + gaps}px`
   }
 }
+
+// creating hover effect
+const boxArr = document.querySelectorAll('.box')
+
+boxArr.forEach(item => item.addEventListener('mouseover', handleClick))
+
+function handleClick(e) {
+  e.target.classList.add('color-lightBlue')
+}
