@@ -36,7 +36,49 @@ body {
 .input-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   margin: 4rem 0;
+}
+
+.input-container label {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.input-wrapper {
+  display: flex;
+}
+
+.input-wrapper input {
+  outline: none;
+  padding: 0.2rem 0 0.2rem 1rem;
+  width: 60px;
+}
+
+.input-wrapper button,
+.input-wrapper input {
+  border: 1px solid hsla(0, 0%, 0%, 1);
+  border-radius: 15px;
+
+  transition: all 1s;
+  font-weight: 300;
+}
+
+.input-wrapper button {
+  border: 1px solid hsla(0, 0%, 0%, 1);
+  margin-left: 1rem;
+  padding: 0.2rem 1rem;
+  background-color: hsla(0, 0%, 100%, 1);
+}
+
+.input-wrapper input:hover,
+.input-wrapper button:hover {
+  transform: scale(1.1);
+  transition: all 1s;
+}
+
+.input-wrapper button:hover {
+  background-color: hsla(0, 0%, 0%, 1);
+  color: hsla(0, 0%, 100%, 1);
 }

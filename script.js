@@ -23,7 +23,6 @@ function createGrid(userInput) {
   const boxArr = document.querySelectorAll('.box')
 
   boxArr.forEach(item => item.addEventListener('mouseover', handleHover))
-  console.log(boxArr)
 
   function handleHover(e) {
     e.target.classList.add('color-lightBlue')
@@ -40,12 +39,16 @@ const label = document.createElement('label')
 label.textContent = 'Create your own grid. Choose a number between 1 and 60'
 label.setAttribute('for', 'input')
 
+const inputWrapper = document.createElement('div')
+inputWrapper.classList.add('input-wrapper')
+
 const input = document.createElement('input')
 input.setAttribute('type', 'number')
 input.setAttribute('id', 'input')
 input.setAttribute('name', 'input')
 input.setAttribute('min', '1')
-input.setAttribute('max', '60')
+input.setAttribute('max', '40')
+input.setAttribute('placeholder', '20')
 
 const inputButton = document.createElement('button')
 inputButton.textContent = 'Create new grid'
@@ -54,8 +57,9 @@ container.insertAdjacentElement('beforebegin', inputContainer)
 inputContainer.classList.add('input-container')
 inputContainer.appendChild(form)
 inputContainer.appendChild(label)
-inputContainer.appendChild(input)
-inputContainer.appendChild(inputButton)
+inputContainer.appendChild(inputWrapper)
+inputWrapper.appendChild(input)
+inputWrapper.appendChild(inputButton)
 
 inputButton.addEventListener('click', handleClick)
 
