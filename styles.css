@@ -38,12 +38,12 @@ body {
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  margin: 4rem 0;
+  margin: 4rem 0 2rem 0;
 }
 
 .input-container label {
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .input-wrapper {
@@ -57,7 +57,8 @@ body {
 }
 
 .input-wrapper button,
-.input-wrapper input {
+.input-wrapper input,
+.button {
   border: 1px solid hsla(0, 0%, 0%, 1);
   border-radius: 15px;
 
@@ -65,7 +66,8 @@ body {
   font-weight: 300;
 }
 
-.input-wrapper button {
+.input-wrapper button,
+.button {
   border: 1px solid hsla(0, 0%, 0%, 1);
   margin-left: 1rem;
   padding: 0.2rem 1rem;
@@ -73,12 +75,14 @@ body {
 }
 
 .input-wrapper input:hover,
-.input-wrapper button:hover {
+.input-wrapper button:hover,
+.button:hover {
   transform: scale(1.1);
   transition: all 1s;
 }
 
-.input-wrapper button:hover {
+.input-wrapper button:hover,
+.button:hover {
   background-color: hsla(0, 0%, 0%, 1);
   color: hsla(0, 0%, 100%, 1);
 }
@@ -89,4 +93,12 @@ body {
   text-align: center;
   margin-bottom: 3rem;
   font-weight: 300;
+}
+
+/* random color */
+
+.rgb-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
 }

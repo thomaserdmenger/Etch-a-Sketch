@@ -96,3 +96,22 @@ resetButton.addEventListener('click', handleReset)
 function handleReset() {
   location.reload()
 }
+
+// creating randomized color hover
+const rgb = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
+  Math.random() * 256
+)})`
+
+const rgbColorContainer = document.createElement('div')
+rgbColorContainer.classList.add('rgb-container')
+
+const rgbColorMessage = document.createElement('span')
+rgbColorMessage.textContent = 'Choose random colors here:'
+
+const rgbColorButton = document.createElement('button')
+rgbColorButton.textContent = 'Random colors'
+rgbColorButton.classList.add('button')
+
+inputContainer.insertAdjacentElement('afterend', rgbColorContainer)
+rgbColorContainer.appendChild(rgbColorMessage)
+rgbColorContainer.appendChild(rgbColorButton)
