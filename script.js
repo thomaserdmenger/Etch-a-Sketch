@@ -98,10 +98,6 @@ function handleReset() {
 }
 
 // creating randomized color hover
-const rgb = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
-  Math.random() * 256
-)})`
-
 const rgbColorContainer = document.createElement('div')
 rgbColorContainer.classList.add('rgb-container')
 
@@ -115,3 +111,15 @@ rgbColorButton.classList.add('button')
 inputContainer.insertAdjacentElement('afterend', rgbColorContainer)
 rgbColorContainer.appendChild(rgbColorMessage)
 rgbColorContainer.appendChild(rgbColorButton)
+
+rgbColorButton.addEventListener('click', handleRgb)
+
+function handleRgb() {
+  const boxArr = document.querySelectorAll('.box')
+  boxArr.forEach(item => item.addEventListener('mouseover', handleHover2))
+  function handleHover2(e) {
+    e.target.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(
+      Math.random() * 256
+    )}, ${Math.floor(Math.random() * 256)})`
+  }
+}
