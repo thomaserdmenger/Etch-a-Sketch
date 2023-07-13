@@ -123,3 +123,37 @@ function handleRgb() {
     )}, ${Math.floor(Math.random() * 256)})`
   }
 }
+
+// creating dark color hover
+const darkContainer = document.createElement('div')
+darkContainer.classList.add('dark-color')
+
+const darkMessage = document.createElement('span')
+darkMessage.textContent = 'Choose darkening effect here:'
+
+const darkButton = document.createElement('button')
+darkButton.classList.add('button')
+darkButton.textContent = 'Dark Colors'
+
+rgbColorContainer.insertAdjacentElement('afterend', darkContainer)
+darkContainer.appendChild(darkMessage)
+darkContainer.appendChild(darkButton)
+
+darkButton.addEventListener('click', handleDark)
+
+let colorCode = 10
+
+function handleDark() {
+  const boxArr = document.querySelectorAll('.box')
+  boxArr.forEach(item => item.addEventListener('mouseover', handleHover3))
+  function handleHover3(e) {
+    if (colorCode <= 10 && colorCode > 0) {
+      colorCode -= 1
+      e.target.style.backgroundColor = `hsla(0, 0%, 100%, 0.${colorCode})`
+      console.log((e.target.style.backgroundColor = `hsla(0,0%, 100%, 0.${colorCode})`))
+    } else if (colorCode === 0) {
+      colorCode = 9
+      console.log((e.target.style.backgroundColor = `hsla(0,0%, 100%, 0.${colorCode})`))
+    }
+  }
+}

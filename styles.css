@@ -61,7 +61,6 @@ body {
 .button {
   border: 1px solid hsla(0, 0%, 0%, 1);
   border-radius: 15px;
-
   transition: all 1s;
   font-weight: 300;
 }
@@ -95,10 +94,12 @@ body {
   font-weight: 300;
 }
 
-/* random color */
+/* random color and dark color */
 
-.rgb-container {
+.rgb-container,
+.dark-color {
   display: flex;
   justify-content: center;
   margin-bottom: 3rem;
+  font-weight: 300;
 }
