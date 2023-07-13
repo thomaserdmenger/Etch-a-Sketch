@@ -124,6 +124,15 @@ function handleRgb() {
   }
 }
 
+// Change color random when hovering over the button
+rgbColorButton.addEventListener('mouseover', handleRgbHover)
+
+function handleRgbHover() {
+  rgbColorButton.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(
+    Math.random() * 256
+  )}, ${Math.floor(Math.random() * 256)})`
+}
+
 // creating dark color hover
 const darkContainer = document.createElement('div')
 darkContainer.classList.add('dark-color')
